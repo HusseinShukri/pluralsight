@@ -1,0 +1,13 @@
+c:\Users\Hussain Shokre\Trining\testSquare\PriceCalculator\PriceCalculator\PriceCalculator\bin\Debug\netcoreapp3.1\PriceCalculator.exe
+c:\Users\Hussain Shokre\Trining\testSquare\PriceCalculator\PriceCalculator\PriceCalculator\bin\Debug\netcoreapp3.1\PriceCalculator.deps.json
+c:\Users\Hussain Shokre\Trining\testSquare\PriceCalculator\PriceCalculator\PriceCalculator\bin\Debug\netcoreapp3.1\PriceCalculator.runtimeconfig.json
+c:\Users\Hussain Shokre\Trining\testSquare\PriceCalculator\PriceCalculator\PriceCalculator\bin\Debug\netcoreapp3.1\PriceCalculator.runtimeconfig.dev.json
+c:\Users\Hussain Shokre\Trining\testSquare\PriceCalculator\PriceCalculator\PriceCalculator\bin\Debug\netcoreapp3.1\PriceCalculator.dll
+c:\Users\Hussain Shokre\Trining\testSquare\PriceCalculator\PriceCalculator\PriceCalculator\bin\Debug\netcoreapp3.1\PriceCalculator.pdb
+c:\Users\Hussain Shokre\Trining\testSquare\PriceCalculator\PriceCalculator\PriceCalculator\obj\Debug\netcoreapp3.1\PriceCalculator.csprojAssemblyReference.cache
+c:\Users\Hussain Shokre\Trining\testSquare\PriceCalculator\PriceCalculator\PriceCalculator\obj\Debug\netcoreapp3.1\PriceCalculator.AssemblyInfoInputs.cache
+c:\Users\Hussain Shokre\Trining\testSquare\PriceCalculator\PriceCalculator\PriceCalculator\obj\Debug\netcoreapp3.1\PriceCalculator.AssemblyInfo.cs
+c:\Users\Hussain Shokre\Trining\testSquare\PriceCalculator\PriceCalculator\PriceCalculator\obj\Debug\netcoreapp3.1\PriceCalculator.csproj.CoreCompileInputs.cache
+c:\Users\Hussain Shokre\Trining\testSquare\PriceCalculator\PriceCalculator\PriceCalculator\obj\Debug\netcoreapp3.1\PriceCalculator.dll
+c:\Users\Hussain Shokre\Trining\testSquare\PriceCalculator\PriceCalculator\PriceCalculator\obj\Debug\netcoreapp3.1\PriceCalculator.pdb
+c:\Users\Hussain Shokre\Trining\testSquare\PriceCalculator\PriceCalculator\PriceCalculator\obj\Debug\netcoreapp3.1\PriceCalculator.genruntimeconfig.cache
