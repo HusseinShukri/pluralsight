@@ -1,9 +1,9 @@
-using PriceCalculator.Common;
-namespace PriceCalculator.Expenses
+using PriceCalculator.PriceCalculator.Enums;
+namespace PriceCalculator.PriceCalculator.Expenses
 {
     public interface IExpenses
     {
-        double getExpenses();
-        MoneyType getMoneyType();
+        double Expense { get; }
+        MoneyType MoneyType { get; }
     }
 }

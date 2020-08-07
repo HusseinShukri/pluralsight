@@ -1,9 +1,10 @@
-using PriceCalculator.Common;
-namespace PriceCalculator.CAP
+using PriceCalculator.PriceCalculator.Enums;
+
+namespace PriceCalculator.PriceCalculator.CAP
 {
     public interface ICAP
     {
-        double getCAP();
-        MoneyType getMoneyType();
+        double CAP { get; }
+        MoneyType MoneyType { get; }
     }
 }

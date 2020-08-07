@@ -1,9 +1,9 @@
-namespace PriceCalculator.Discount
+namespace PriceCalculator.PriceCalculator.Discount
 {
 
-    public interface IDiscount
+    public interface IDiscount 
     {
-        double getDiscount();
-        double getDiscount(int code);
+        double GetDiscount();
+        double GetDiscount(int code);
     }
 }

@@ -1,56 +1,96 @@
+using System.Linq;
 using System;
 using System.Collections.Generic;
-using PriceCalculator.Common;
+using PriceCalculator.PriceCalculator.Utilities;
+using PriceCalculator.PriceCalculator.Enums;
 
-namespace PriceCalculator.Discount
+namespace PriceCalculator.PriceCalculator.Discount
 {
     public class DiscountManager
     {
-        private Dictionary<DiscountType, IDiscount> discountDictionary = new Dictionary<DiscountType, IDiscount>();
+        private Dictionary<DiscountType, IDiscount> _dictionary = new Dictionary<DiscountType, IDiscount>();
         public DiscountManager() { }
-        public DiscountManager(DiscountType type, IDiscount expenses)
+        public DiscountManager(DiscountType type, IDiscount discount)
         {
-            this.discountDictionary.Add(type, expenses);
+            this._dictionary.Add(type, discount);
         }
         public DiscountManager(Dictionary<DiscountType, IDiscount> discountDictionary)
         {
-            this.discountDictionary = discountDictionary;
+            this._dictionary = discountDictionary;
         }
 
-        public bool countainDiscountType(DiscountType type)
+        public IDiscount GetDiscountByType(DiscountType type)
         {
-            return discountDictionary.ContainsKey(type);
+            return _dictionary.GetValueOrDefault(type, new NullDiscount());
         }
-        public IDiscount getDiscountByType(DiscountType type)
+        public Dictionary<DiscountType, IDiscount> GetDictionary()
         {
-            if (!this.countainDiscountType(type)) { return null; }
-            else { return discountDictionary[type]; }
+            return _dictionary;
         }
-        public bool AddDiscountType(DiscountType type, IDiscount expenses)
+        public bool AddDiscountType(DiscountType type, IDiscount discount)
         {
-            if (this.countainDiscountType(type))
-            {
-                return false;
-            }
-            return discountDictionary.TryAdd(type, expenses);
+            return _dictionary.TryAdd(type, discount);
 
         }
-        public bool updateOrAddEDiscountType(DiscountType type, IDiscount expenses)
+        public bool UpdateOrAddDiscountType(DiscountType type, IDiscount discount)
         {
-            if (!this.AddDiscountType(type, expenses))
+            if (!this.AddDiscountType(type, discount))
             {
-                if (this.countainDiscountType(type)) { discountDictionary[type] = expenses; }
+                if (this.IsExist(type)) { _dictionary[type] = discount; }
                 else { throw new Exception("bug in : Class ExpensesManager Method updateOrAddExpensesType Method"); }
             }
             return true;
         }
-        public bool removeDiscountType(DiscountType type)
+        public bool AddUPCCodeDiscount(DiscountType type, int code, double price)
         {
-            return discountDictionary.Remove(type);
+            var uCPDiscount = _dictionary[type];
+            if (uCPDiscount != null)
+            {
+                var t = (UCPDiscount)uCPDiscount;
+                return t.AddDiscount(code, price);
+            }
+            return false;
         }
-        public bool isEmpty()
+        public bool UpdateOrAddUPCCodeDiscount(DiscountType type, int code, double price)
         {
-            return discountDictionary.Count == 0 ? true : false;
+            var uCPDiscount = _dictionary[type];
+            if (uCPDiscount != null)
+            {
+                var t = (UCPDiscount)uCPDiscount;
+                return t.AddOrUpdateDiscount(code, price);
+            }
+            return false;
+        }
+        public bool RemoveDiscountType(DiscountType type)
+        {
+            return _dictionary.Remove(type);
+        }
+        public bool RemoveUPCCodeDiscount(DiscountType type, int code)
+        {
+            var uCPDiscount = _dictionary[type];
+            if (uCPDiscount != null)
+            {
+                var t = (UCPDiscount)uCPDiscount;
+                return t.RemoveDiscount(code);
+            }
+            return false;
+        }
+        public bool IsExist(DiscountType type)
+        {
+            return _dictionary.ContainsKey(type);
+        }
+        public bool IsEmpty()
+        {
+            return !_dictionary.Any();
+        }
+        public override string ToString()
+        {
+            string str = "";
+            foreach (var item in _dictionary.Keys)
+            {
+                str += $"{CurrencyExtension.EnumToString(item)}@";
+            }
+            return str.Replace("@", System.Environment.NewLine);
         }
     }
 }

@@ -1,4 +1,4 @@
-namespace PriceCalculator.Discount
+namespace PriceCalculator.PriceCalculator.Discount
 {
     public class UniversalDiscount : IDiscount
     {
@@ -7,19 +7,13 @@ namespace PriceCalculator.Discount
         {
             this.discount = discount;
         }
-
-        public double getDiscount()
+        public double GetDiscount()
         {
             return discount;
         }
-        /// <returns>discount</returns>
-        public double getDiscount(int code)
+        public double GetDiscount(int code)
         {
             return discount;
-        }
-        public void newUniversalDiscount(double discount)
-        {
-            this.discount = discount;
         }
     }
 }

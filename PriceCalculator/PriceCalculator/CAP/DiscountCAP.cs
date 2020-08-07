@@ -1,27 +1,16 @@
-using PriceCalculator.Common;
-namespace PriceCalculator.CAP
+using PriceCalculator.PriceCalculator.Enums;
+
+namespace PriceCalculator.PriceCalculator.CAP
 {
     public class DiscountCAP : ICAP
     {
-        private double cap;
-        private MoneyType type;
-        public DiscountCAP(MoneyType type, double cap)
+        public double CAP { get; private set; }
+        public MoneyType MoneyType { get; private set; }
+
+        public DiscountCAP(MoneyType moneyType, double cAP)
         {
-            this.type = type;
-            this.cap = cap;
-        }
-        public double getCAP()
-        {
-            return cap;
-        }
-        public MoneyType getMoneyType()
-        {
-            return type;
-        }
-        public void newCAP(MoneyType type, double cap)
-        {
-            this.type = type;
-            this.cap = cap;
+            MoneyType = moneyType;
+            CAP = cAP;
         }
     }
 }

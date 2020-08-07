@@ -1,59 +1,64 @@
+using System.Linq;
 using System;
-using PriceCalculator.Common;
+using PriceCalculator.PriceCalculator.Enums;
 using System.Collections.Generic;
-namespace PriceCalculator.Expenses
+using PriceCalculator.PriceCalculator.Utilities;
+namespace PriceCalculator.PriceCalculator.Expenses
 {
     public class ExpensesManager
     {
-        private Dictionary<ExpensesType, IExpenses> expensesDictionary = new Dictionary<ExpensesType, IExpenses>();
+        private Dictionary<ExpensesType, IExpenses> _dictionary = new Dictionary<ExpensesType, IExpenses>();
         public ExpensesManager() { }
         public ExpensesManager(ExpensesType type, IExpenses expenses)
         {
-            this.expensesDictionary.Add(type, expenses);
+            this._dictionary.Add(type, expenses);
         }
-        public ExpensesManager(Dictionary<ExpensesType, IExpenses> expensesDictionary)
+        public ExpensesManager(Dictionary<ExpensesType, IExpenses> dictionary)
         {
-            this.expensesDictionary = expensesDictionary;
+            this._dictionary = dictionary;
         }
 
-        public bool countainExpensesType(ExpensesType type)
+        public IExpenses GetExpensesByType(ExpensesType type)
         {
-            return expensesDictionary.ContainsKey(type);
+            return _dictionary.GetValueOrDefault(type, new NullExpenses());
         }
-        public IExpenses getExpensesByType(ExpensesType type)
+        public Dictionary<ExpensesType, IExpenses> GetDictionary()
         {
-            if (!this.countainExpensesType(type)) { return new NullExpenses(); }
-            else { return expensesDictionary[type]; }
-        }
-        public Dictionary<ExpensesType, IExpenses> getExpensesDictionary()
-        {
-            return expensesDictionary;
+            return _dictionary;
         }
         public bool AddExpensesType(ExpensesType type, IExpenses expenses)
         {
-            if (this.countainExpensesType(type))
-            {
-                return false;
-            }
-            return expensesDictionary.TryAdd(type, expenses);
-
+            return _dictionary.TryAdd(type, expenses);
         }
-        public bool updateOrAddExpensesType(ExpensesType type, IExpenses expenses)
+        public bool UpdateOrAddExpensesType(ExpensesType type, IExpenses expenses)
         {
             if (!this.AddExpensesType(type, expenses))
             {
-                if (this.countainExpensesType(type)) { expensesDictionary[type] = expenses; }
+                if (this.IsExist(type)) { _dictionary[type] = expenses; }
                 else { throw new Exception("bug in : Class ExpensesManager Method updateOrAddExpensesType Method"); }
             }
             return true;
         }
-        public bool removeExpensesType(ExpensesType type)
+        public bool RemoveExpensesType(ExpensesType type)
         {
-            return expensesDictionary.Remove(type);
+            return _dictionary.Remove(type);
         }
-        public bool isEmpty()
+        public bool IsExist(ExpensesType type)
         {
-            return expensesDictionary.Count == 0 ? true : false;
+            return _dictionary.ContainsKey(type);
+        }
+        public bool IsEmpty()
+        {
+            return !_dictionary.Any();
+        }
+        public override string ToString()
+        {
+            string str = "";
+            foreach (var item in _dictionary.Keys)
+            {
+                str += $"{CurrencyExtension.EnumToString(item)} : {_dictionary[item].MoneyType} : {_dictionary[item].Expense}@";
+            }
+            return str.Replace("@", System.Environment.NewLine);
         }
     }
 }

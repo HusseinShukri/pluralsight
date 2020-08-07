@@ -1,15 +1,17 @@
-using PriceCalculator.Common;
-namespace PriceCalculator.CAP
+using PriceCalculator.PriceCalculator.Enums;
+using PriceCalculator.PriceCalculator.Utilities;
+
+namespace PriceCalculator.PriceCalculator.CAP
 {
     public static class CAPExtension
     {
         public static double FindCAP(this ICAP value, double cost)
         {
-            if (value.getMoneyType() == MoneyType.Persentage)
+            if (value.MoneyType == MoneyType.Persentage)
             {
-                return Tools.RoundInternalResult(Tools.PercentageDivider(value.getCAP()) * cost);
+                return MathUtilities.RoundInternalResult(MathUtilities.PercentageDivider(value.CAP * cost));
             }
-            return value.getCAP();
+            return value.CAP;
         }
     }
 }

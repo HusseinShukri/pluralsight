@@ -1,16 +1,18 @@
 using System;
-using PriceCalculator.Common;
-namespace PriceCalculator.Expenses
+using PriceCalculator.PriceCalculator.Utilities;
+using PriceCalculator.PriceCalculator.Enums;
+
+namespace PriceCalculator.PriceCalculator.Expenses
 {
     public static class ExpensesExtension
     {
         public static double FindExpenses(this IExpenses value, double cost)
         {
-            if (value.getMoneyType() == MoneyType.Persentage)
+            if (value.MoneyType == MoneyType.Persentage)
             {
-                return Tools.RoundInternalResult(Tools.PercentageDivider(value.getExpenses()) * cost);
+                return MathUtilities.RoundInternalResult(MathUtilities.PercentageDivider(value.Expense * cost));
             }
-            return Tools.RoundInternalResult(value.getExpenses());
+            return MathUtilities.RoundInternalResult(value.Expense);
         }
         public static double FindTotalExpenses(this ExpensesManager value, double cost)
         {
@@ -18,23 +20,22 @@ namespace PriceCalculator.Expenses
             IExpenses expenses;
             foreach (var type in Enum.GetValues(typeof(ExpensesType)))
             {
-                expenses = value.getExpensesByType((ExpensesType)(type));
+                expenses = value.GetExpensesByType((ExpensesType)(type));
                 result += expenses.FindExpenses(cost);
             }
             return result;
         }
-        public static double findPackaging(this ExpensesManager value, double cost)
+        public static double FindPackaging(this ExpensesManager value, double cost)
         {
-            return FindExpenses(value.getExpensesByType(ExpensesType.Packaging), cost);
+            return FindExpenses(value.GetExpensesByType(ExpensesType.Packaging), cost);
         }
-        public static double findTransport(this ExpensesManager value, double cost)
+        public static double FindTransport(this ExpensesManager value, double cost)
         {
-            return FindExpenses(value.getExpensesByType(ExpensesType.Transport), cost);
+            return FindExpenses(value.GetExpensesByType(ExpensesType.Transport), cost);
         }
-        public static double findAdministrative(this ExpensesManager value, double cost)
+        public static double FindAdministrative(this ExpensesManager value, double cost)
         {
-            return FindExpenses(value.getExpensesByType(ExpensesType.Administrative), cost);
+            return FindExpenses(value.GetExpensesByType(ExpensesType.Administrative), cost);
         }
-
     }
 }

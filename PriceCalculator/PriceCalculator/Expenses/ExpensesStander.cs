@@ -1,27 +1,14 @@
-using PriceCalculator.Common;
-namespace PriceCalculator.Expenses
+using PriceCalculator.PriceCalculator.Enums;
+namespace PriceCalculator.PriceCalculator.Expenses
 {
     public class ExpensesStander : IExpenses
     {
-        private double expenses;
-        private MoneyType moneyType;
+        public double Expense { get; private set; }
+        public MoneyType MoneyType { get; private set; }
         public ExpensesStander(MoneyType moneyType, double expenses)
         {
-            this.expenses = expenses;
-            this.moneyType = moneyType;
-        }
-        public double getExpenses()
-        {
-            return expenses;
-        }
-        public MoneyType getMoneyType()
-        {
-            return moneyType;
-        }
-        public void newExpenses(MoneyType moneyType, double expenses)
-        {
-            this.moneyType = moneyType;
-            this.expenses = expenses;
+            MoneyType = moneyType;
+            Expense = expenses;
         }
     }
 }

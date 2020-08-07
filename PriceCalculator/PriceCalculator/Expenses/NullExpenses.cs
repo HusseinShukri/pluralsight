@@ -1,17 +1,20 @@
-using PriceCalculator.Common;
+using System;
+using PriceCalculator.PriceCalculator.Enums;
 
-namespace PriceCalculator.Expenses
+namespace PriceCalculator.PriceCalculator.Expenses
 {
     public class NullExpenses : IExpenses
     {
-        public double getExpenses()
+        public NullExpenses()
         {
-            return 0;
         }
 
-        public MoneyType getMoneyType()
+        public double Expense => 0;
+        public MoneyType MoneyType => MoneyType.NullType;
+        public override String ToString()
         {
-            return MoneyType.abslute;
+            return "No expenses";
         }
+
     }
 }
