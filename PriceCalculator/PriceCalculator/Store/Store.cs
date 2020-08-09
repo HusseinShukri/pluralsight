@@ -130,58 +130,28 @@ namespace PriceCalculator.PriceCalculator.Stores
         }
         #endregion
         #region ReportsMethods
-        public bool IsCAP(double cost, double discount)
-        {
-            if (!(CAP is NullCAP))
-            {
-                var cap = CAP.FindCAP(cost);
-                if (cap < discount)
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
-        public string DiscountReport(double before, double after, bool additive)
-        {
-            var str = $"Before Tax discount = {this.storeMainCurrency} {before}@";
-            str += $"After tax discount  = {this.storeMainCurrency} {after} ";
-            str += additive ? "@Additively" : "@Multiplicatively";
-            return str;
-        }
-        public double AfterTaxDiscount(int upc, double cost, bool additive)
-        {
-            if (additive)
-            {
-                return discountManager.FindDiscountafterTaxAplayAdditive(upc, cost);
-            }
-            else
-            {
-                return discountManager.FindDiscountafterTaxAplayMultiplicative(upc, cost);
-            }
-        }
         public string Report(Product product, bool additive, List<ExpensesType> expensesList)
         {
             var str = "";
             var cost = product.Price;
             str += $"@Cost = {this.storeMainCurrency} {cost}@";
             var beforeTaxDiscount = discountManager.FindDiscountBeforeTaxAplay(product.UPCCode, cost);
-            var trueCAP = IsCAP(cost, beforeTaxDiscount);
-            if (trueCAP)
+            var reachedCAPDiscount = isReachedCAPDiscount(cost, beforeTaxDiscount);
+            if (reachedCAPDiscount)
             {
                 beforeTaxDiscount = CAP.FindCAP(cost);
             }
             cost -= beforeTaxDiscount;
             var tax = MathUtilities.FindTaxExternal(this.Tax, cost);
             str += $"Tax= {this.storeMainCurrency} {tax}@";
-            var afterTaxDiscount = 0.0;
             var totaldiscount = beforeTaxDiscount;
-            if (!trueCAP)
+            var afterTaxDiscount = 0.0;
+            if (!reachedCAPDiscount)
             {
                 afterTaxDiscount = AfterTaxDiscount(product.UPCCode, cost, additive);
                 totaldiscount += afterTaxDiscount;
-                trueCAP = IsCAP(cost, totaldiscount);
-                if (trueCAP)
+                reachedCAPDiscount = isReachedCAPDiscount(cost, totaldiscount);
+                if (reachedCAPDiscount)
                 {
                     totaldiscount = CAP.FindCAP(cost);
                     afterTaxDiscount = totaldiscount - beforeTaxDiscount;
@@ -193,21 +163,58 @@ namespace PriceCalculator.PriceCalculator.Stores
                 }
             }
             str += $"Total Discount = {this.storeMainCurrency} {MathUtilities.RoundExternalResult(totaldiscount)}@";
-            if (expensesList.Any())
+            str += this.ExpensesReport(expensesList, cost);
+            str += $"Total Amount  = {this.storeMainCurrency} {MathUtilities.RoundExternalResult(cost + tax)}@@";
+            str += this.DetailedDiscountReport(totaldiscount, beforeTaxDiscount, afterTaxDiscount, additive);
+            str = "@@" + str + "@@";
+            return str.Replace("@", System.Environment.NewLine);
+        }
+        private bool isReachedCAPDiscount(double cost, double discount)
+        {
+            if (!(CAP is NullCAP))
             {
-                var temp = 0.0;
-                foreach (var item in expensesList)
+                var cap = CAP.FindCAP(cost);
+                if (cap < discount)
                 {
-                    if (!expensesManager.IsExist(item))
-                    {
-                        return $"Please Enter {CurrencyExtension.EnumToString(item)} price first";
-                    }
-                    temp = expensesManager.GetExpensesByType(item).FindExpenses(cost);
-                    str += $"{CurrencyExtension.EnumToString(item)} = {this.storeMainCurrency} {MathUtilities.RoundExternalResult(temp)}@";
-                    cost += temp;
+                    return true;
                 }
             }
-            str += $"Total Amount  = {this.storeMainCurrency} {MathUtilities.RoundExternalResult(cost + tax)}@@";
+            return false;
+        }
+        private double AfterTaxDiscount(int upc, double cost, bool additive)
+        {
+            if (additive)
+            {
+                return discountManager.FindDiscountafterTaxAplayAdditive(upc, cost);
+            }
+            else
+            {
+                return discountManager.FindDiscountafterTaxAplayMultiplicative(upc, cost);
+            }
+        }
+        private String ExpensesReport(List<ExpensesType> expensesList, double cost)
+        {
+            var str = "";
+            if (!expensesList.Any())
+            {
+                return str;
+            }
+            var temp = 0.0;
+            foreach (var item in expensesList)
+            {
+                if (!expensesManager.IsExist(item))
+                {
+                    throw new Exception($"Please Enter {CurrencyExtension.EnumToString(item)} price first");
+                }
+                temp = expensesManager.GetExpensesByType(item).FindExpenses(cost);
+                str += $"{CurrencyExtension.EnumToString(item)} = {this.storeMainCurrency} {MathUtilities.RoundExternalResult(temp)}@";
+                cost += temp;
+            }
+            return str;
+        }
+        private string DetailedDiscountReport(double totaldiscount, double beforeTaxDiscount, double afterTaxDiscount, bool additive)
+        {
+            var str = "";
             if (totaldiscount != 0.0)
             {
                 str += DiscountReport(beforeTaxDiscount, afterTaxDiscount, additive);
@@ -216,8 +223,14 @@ namespace PriceCalculator.PriceCalculator.Stores
             {
                 str += "NO Discount";
             }
-            str = "@@" + str + "@@";
-            return str.Replace("@", System.Environment.NewLine);
+            return str;
+        }
+        private string DiscountReport(double beforeTaxDiscount, double afterTaxDiscount, bool additive)
+        {
+            var str = $"Before Tax discount = {this.storeMainCurrency} {beforeTaxDiscount}@";
+            str += $"After tax discount  = {this.storeMainCurrency} {afterTaxDiscount} ";
+            str += additive ? "@Additively" : "@Multiplicatively";
+            return str;
         }
         public string Statuse()
         {

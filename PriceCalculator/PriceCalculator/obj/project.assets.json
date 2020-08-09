@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Hussain Shokre\\Trining\\testSquare\\PriceCalculator\\PriceCalculator\\PriceCalculator\\PriceCalculator.csproj",
+      "projectUniqueName": "c:\\Users\\Hussain Shokre\\Trining\\testSquare\\PriceCalculator\\PriceCalculator\\PriceCalculator\\PriceCalculator.csproj",
       "projectName": "PriceCalculator",
-      "projectPath": "C:\\Users\\Hussain Shokre\\Trining\\testSquare\\PriceCalculator\\PriceCalculator\\PriceCalculator\\PriceCalculator.csproj",
+      "projectPath": "c:\\Users\\Hussain Shokre\\Trining\\testSquare\\PriceCalculator\\PriceCalculator\\PriceCalculator\\PriceCalculator.csproj",
       "packagesPath": "C:\\Users\\Hussain Shokre\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Hussain Shokre\\Trining\\testSquare\\PriceCalculator\\PriceCalculator\\PriceCalculator\\obj\\",
+      "outputPath": "c:\\Users\\Hussain Shokre\\Trining\\testSquare\\PriceCalculator\\PriceCalculator\\PriceCalculator\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Hussain Shokre\\AppData\\Roaming\\NuGet\\NuGet.Config",
