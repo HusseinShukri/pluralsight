@@ -1,0 +1,8 @@
+
+*.v2
+*.dll
+*.exe
+*.cache
+*.txt
+*.xml
+*.props
