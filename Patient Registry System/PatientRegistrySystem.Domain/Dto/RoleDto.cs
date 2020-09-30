@@ -1,5 +1,4 @@
-﻿using PatientRegistrySystem.Domain.Entities;
-
+﻿
 namespace PatientRegistrySystem.Domain.Dto
 {
    public  class RoleDto

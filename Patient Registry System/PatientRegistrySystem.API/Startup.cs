@@ -3,13 +3,10 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using PatientRegistrySystem.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using PatientRegistrySystem.Services;
-using PatientRegistrySystem.Domain.Entities;
 using System;
-using Microsoft.AspNetCore.Mvc.Formatters;
+using PatientRegistrySystem.DB.Contexts;
 
 namespace PatientRegistrySystem.API
 {

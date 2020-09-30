@@ -4,14 +4,14 @@
     "E:\\source\\repos\\Patient Registry System\\PatientRegistrySystem.Services\\PatientRegistrySystem.Services.csproj": {}
   },
   "projects": {
-    "E:\\source\\repos\\Patient Registry System\\PatientRegistrySystem.Data\\PatientRegistrySystem.Data.csproj": {
+    "E:\\source\\repos\\Patient Registry System\\PatientRegistrySystem.DB\\PatientRegistrySystem.DB.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\source\\repos\\Patient Registry System\\PatientRegistrySystem.Data\\PatientRegistrySystem.Data.csproj",
-        "projectName": "PatientRegistrySystem.Data",
-        "projectPath": "E:\\source\\repos\\Patient Registry System\\PatientRegistrySystem.Data\\PatientRegistrySystem.Data.csproj",
+        "projectUniqueName": "E:\\source\\repos\\Patient Registry System\\PatientRegistrySystem.DB\\PatientRegistrySystem.DB.csproj",
+        "projectName": "PatientRegistrySystem.DB",
+        "projectPath": "E:\\source\\repos\\Patient Registry System\\PatientRegistrySystem.DB\\PatientRegistrySystem.DB.csproj",
         "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
-        "outputPath": "E:\\source\\repos\\Patient Registry System\\PatientRegistrySystem.Data\\obj\\",
+        "outputPath": "E:\\source\\repos\\Patient Registry System\\PatientRegistrySystem.DB\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -45,13 +45,15 @@
       "frameworks": {
         "netstandard2.0": {
           "dependencies": {
-            "Microsoft.EntityFrameworkCore.SqlServer": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",
-              "version": "[3.1.8, )"
+              "version": "[8.0.1, )"
             },
-            "Microsoft.EntityFrameworkCore.Tools": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
+            "Microsoft.AspNetCore.Mvc.Core": {
+              "target": "Package",
+              "version": "[2.2.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[3.1.8, )"
             },
@@ -113,10 +115,6 @@
       "frameworks": {
         "netstandard2.0": {
           "dependencies": {
-            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
-              "target": "Package",
-              "version": "[8.0.1, )"
-            },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",
@@ -168,8 +166,8 @@
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {
-              "E:\\source\\repos\\Patient Registry System\\PatientRegistrySystem.Data\\PatientRegistrySystem.Data.csproj": {
-                "projectPath": "E:\\source\\repos\\Patient Registry System\\PatientRegistrySystem.Data\\PatientRegistrySystem.Data.csproj"
+              "E:\\source\\repos\\Patient Registry System\\PatientRegistrySystem.DB\\PatientRegistrySystem.DB.csproj": {
+                "projectPath": "E:\\source\\repos\\Patient Registry System\\PatientRegistrySystem.DB\\PatientRegistrySystem.DB.csproj"
               },
               "E:\\source\\repos\\Patient Registry System\\PatientRegistrySystem.Domain\\PatientRegistrySystem.Domain.csproj": {
                 "projectPath": "E:\\source\\repos\\Patient Registry System\\PatientRegistrySystem.Domain\\PatientRegistrySystem.Domain.csproj"
@@ -186,13 +184,13 @@
       "frameworks": {
         "netstandard2.0": {
           "dependencies": {
-            "Microsoft.AspNetCore.Mvc.ViewFeatures": {
+            "Microsoft.AspNet.Providers.Core": {
               "target": "Package",
-              "version": "[2.2.0, )"
+              "version": "[2.0.0, )"
             },
-            "Microsoft.EntityFrameworkCore": {
+            "Microsoft.AspNetCore.Mvc.Core": {
               "target": "Package",
-              "version": "[3.1.8, )"
+              "version": "[2.2.5, )"
             },
             "NETStandard.Library": {
               "suppressParent": "All",
