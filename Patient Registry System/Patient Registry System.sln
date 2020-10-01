@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatientRegistrySystem.Services", "PatientRegistrySystem.Services\PatientRegistrySystem.Services.csproj", "{D8175370-6CAB-4E4F-9CA8-EF63ED560609}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PatientRegistrySystem.Services", "PatientRegistrySystem.Services\PatientRegistrySystem.Services.csproj", "{D8175370-6CAB-4E4F-9CA8-EF63ED560609}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatientRegistrySystem.Domain", "PatientRegistrySystem.Domain\PatientRegistrySystem.Domain.csproj", "{2D03852F-8FFC-4932-8C39-1B19D2FBB090}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PatientRegistrySystem.API", "PatientRegistrySystem.API\PatientRegistrySystem.API.csproj", "{7084FFCA-68BD-48B3-9D59-F639239B977C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatientRegistrySystem.API", "PatientRegistrySystem.API\PatientRegistrySystem.API.csproj", "{7084FFCA-68BD-48B3-9D59-F639239B977C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PatientRegistrySystem.DB", "PatientRegistrySystem.DB\PatientRegistrySystem.DB.csproj", "{150A3B2C-97AF-407C-9587-C25B4A8BF05A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatientRegistrySystem.DB", "PatientRegistrySystem.DB\PatientRegistrySystem.DB.csproj", "{150A3B2C-97AF-407C-9587-C25B4A8BF05A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PatientRegistrySystem.Domain", "PatientRegistrySystem.Domain\PatientRegistrySystem.Domain.csproj", "{1F483CB9-F3FC-47BE-88FE-741E8A2C6355}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,10 +21,6 @@ Global
 		{D8175370-6CAB-4E4F-9CA8-EF63ED560609}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D8175370-6CAB-4E4F-9CA8-EF63ED560609}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D8175370-6CAB-4E4F-9CA8-EF63ED560609}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2D03852F-8FFC-4932-8C39-1B19D2FBB090}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2D03852F-8FFC-4932-8C39-1B19D2FBB090}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2D03852F-8FFC-4932-8C39-1B19D2FBB090}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2D03852F-8FFC-4932-8C39-1B19D2FBB090}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7084FFCA-68BD-48B3-9D59-F639239B977C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7084FFCA-68BD-48B3-9D59-F639239B977C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7084FFCA-68BD-48B3-9D59-F639239B977C}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -33,6 +29,10 @@ Global
 		{150A3B2C-97AF-407C-9587-C25B4A8BF05A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{150A3B2C-97AF-407C-9587-C25B4A8BF05A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{150A3B2C-97AF-407C-9587-C25B4A8BF05A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F483CB9-F3FC-47BE-88FE-741E8A2C6355}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F483CB9-F3FC-47BE-88FE-741E8A2C6355}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F483CB9-F3FC-47BE-88FE-741E8A2C6355}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F483CB9-F3FC-47BE-88FE-741E8A2C6355}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

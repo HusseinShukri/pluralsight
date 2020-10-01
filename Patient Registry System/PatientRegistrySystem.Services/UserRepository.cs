@@ -1,10 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PatientRegistrySystem.DB.Contexts;
+using PatientRegistrySystem.DB.Entities;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Web.Providers.Entities;
 
 namespace PatientRegistrySystem.Services
 {

@@ -29,29 +29,6 @@
           "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
         }
       },
-      "EntityFramework/6.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net45/EntityFramework.SqlServer.dll": {},
-          "lib/net45/EntityFramework.dll": {}
-        },
-        "runtime": {
-          "lib/net45/EntityFramework.SqlServer.dll": {},
-          "lib/net45/EntityFramework.dll": {}
-        }
-      },
-      "Microsoft.AspNet.Providers.Core/2.0.0": {
-        "type": "package",
-        "dependencies": {
-          "EntityFramework": "6.0.0"
-        },
-        "compile": {
-          "lib/net40/System.Web.Providers.dll": {}
-        },
-        "runtime": {
-          "lib/net40/System.Web.Providers.dll": {}
-        }
-      },
       "Microsoft.AspNetCore.Authentication.Abstractions/2.2.0": {
         "type": "package",
         "dependencies": {
@@ -2184,50 +2161,6 @@
         "automapper.extensions.microsoft.dependencyinjection.nuspec",
         "icon.png",
         "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll"
-      ]
-    },
-    "EntityFramework/6.0.0": {
-      "sha512": "y6lX/VMghGBV6TvgQS4Q2WK6kAcOoyD+TQxObN9utd0JsMMdMxyqARxKbvgi7KEIbQ8osZ4ZvImaly7l3NDFDw==",
-      "type": "package",
-      "path": "entityframework/6.0.0",
-      "hasTools": true,
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Content/App.config.transform",
-        "Content/Web.config.transform",
-        "entityframework.6.0.0.nupkg.sha512",
-        "entityframework.nuspec",
-        "lib/net40/EntityFramework.SqlServer.dll",
-        "lib/net40/EntityFramework.SqlServer.xml",
-        "lib/net40/EntityFramework.dll",
-        "lib/net40/EntityFramework.xml",
-        "lib/net45/EntityFramework.SqlServer.dll",
-        "lib/net45/EntityFramework.SqlServer.xml",
-        "lib/net45/EntityFramework.dll",
-        "lib/net45/EntityFramework.xml",
-        "tools/EntityFramework.PowerShell.Utility.dll",
-        "tools/EntityFramework.PowerShell.dll",
-        "tools/EntityFramework.psd1",
-        "tools/EntityFramework.psm1",
-        "tools/about_EntityFramework.help.txt",
-        "tools/init.ps1",
-        "tools/install.ps1",
-        "tools/migrate.exe"
-      ]
-    },
-    "Microsoft.AspNet.Providers.Core/2.0.0": {
-      "sha512": "JMk31PExMANVDc04aSUyIlcL3pkFVyNg/dDn+ZZzmhZ2CBctI90BWQH1L0zXgD61ZWW5r4ybInV362sRKWIC+A==",
-      "type": "package",
-      "path": "microsoft.aspnet.providers.core/2.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "ReadMe.txt",
-        "lib/net40/System.Web.Providers.dll",
-        "lib/net40/System.Web.Providers.xml",
-        "microsoft.aspnet.providers.core.2.0.0.nupkg.sha512",
-        "microsoft.aspnet.providers.core.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Authentication.Abstractions/2.2.0": {
@@ -7199,11 +7132,9 @@
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
-      "Microsoft.AspNet.Providers.Core >= 2.0.0",
       "Microsoft.AspNetCore.Mvc.Core >= 2.2.5",
       "NETStandard.Library >= 2.0.3",
-      "PatientRegistrySystem.DB >= 1.0.0",
-      "PatientRegistrySystem.Domain >= 1.0.0"
+      "PatientRegistrySystem.DB >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -7213,11 +7144,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\source\\repos\\Patient Registry System\\PatientRegistrySystem.Services\\PatientRegistrySystem.Services.csproj",
+      "projectUniqueName": "D:\\Decktop-D\\Project\\project\\pluralsight\\Patient Registry System\\PatientRegistrySystem.Services\\PatientRegistrySystem.Services.csproj",
       "projectName": "PatientRegistrySystem.Services",
-      "projectPath": "E:\\source\\repos\\Patient Registry System\\PatientRegistrySystem.Services\\PatientRegistrySystem.Services.csproj",
+      "projectPath": "D:\\Decktop-D\\Project\\project\\pluralsight\\Patient Registry System\\PatientRegistrySystem.Services\\PatientRegistrySystem.Services.csproj",
       "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
-      "outputPath": "E:\\source\\repos\\Patient Registry System\\PatientRegistrySystem.Services\\obj\\",
+      "outputPath": "D:\\Decktop-D\\Project\\project\\pluralsight\\Patient Registry System\\PatientRegistrySystem.Services\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -7236,11 +7167,8 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "E:\\source\\repos\\Patient Registry System\\PatientRegistrySystem.DB\\PatientRegistrySystem.DB.csproj": {
-              "projectPath": "E:\\source\\repos\\Patient Registry System\\PatientRegistrySystem.DB\\PatientRegistrySystem.DB.csproj"
-            },
-            "E:\\source\\repos\\Patient Registry System\\PatientRegistrySystem.Domain\\PatientRegistrySystem.Domain.csproj": {
-              "projectPath": "E:\\source\\repos\\Patient Registry System\\PatientRegistrySystem.Domain\\PatientRegistrySystem.Domain.csproj"
+            "D:\\Decktop-D\\Project\\project\\pluralsight\\Patient Registry System\\PatientRegistrySystem.DB\\PatientRegistrySystem.DB.csproj": {
+              "projectPath": "D:\\Decktop-D\\Project\\project\\pluralsight\\Patient Registry System\\PatientRegistrySystem.DB\\PatientRegistrySystem.DB.csproj"
             }
           }
         }
@@ -7254,10 +7182,6 @@
     "frameworks": {
       "netstandard2.0": {
         "dependencies": {
-          "Microsoft.AspNet.Providers.Core": {
-            "target": "Package",
-            "version": "[2.0.0, )"
-          },
           "Microsoft.AspNetCore.Mvc.Core": {
             "target": "Package",
             "version": "[2.2.5, )"
@@ -7282,27 +7206,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'EntityFramework 6.0.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETStandard,Version=v2.0'. This package may not be fully compatible with your project.",
-      "libraryId": "EntityFramework",
-      "targetGraphs": [
-        ".NETStandard,Version=v2.0"
-      ]
-    },
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'Microsoft.AspNet.Providers.Core 2.0.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETStandard,Version=v2.0'. This package may not be fully compatible with your project.",
-      "libraryId": "Microsoft.AspNet.Providers.Core",
-      "targetGraphs": [
-        ".NETStandard,Version=v2.0"
-      ]
-    }
-  ]
+  }
 }

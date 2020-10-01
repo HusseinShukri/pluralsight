@@ -7125,11 +7125,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\source\\repos\\Patient Registry System\\PatientRegistrySystem.DB\\PatientRegistrySystem.DB.csproj",
+      "projectUniqueName": "D:\\Decktop-D\\Project\\project\\pluralsight\\Patient Registry System\\PatientRegistrySystem.DB\\PatientRegistrySystem.DB.csproj",
       "projectName": "PatientRegistrySystem.DB",
-      "projectPath": "E:\\source\\repos\\Patient Registry System\\PatientRegistrySystem.DB\\PatientRegistrySystem.DB.csproj",
+      "projectPath": "D:\\Decktop-D\\Project\\project\\pluralsight\\Patient Registry System\\PatientRegistrySystem.DB\\PatientRegistrySystem.DB.csproj",
       "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
-      "outputPath": "E:\\source\\repos\\Patient Registry System\\PatientRegistrySystem.DB\\obj\\",
+      "outputPath": "D:\\Decktop-D\\Project\\project\\pluralsight\\Patient Registry System\\PatientRegistrySystem.DB\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -7148,8 +7148,8 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "E:\\source\\repos\\Patient Registry System\\PatientRegistrySystem.Domain\\PatientRegistrySystem.Domain.csproj": {
-              "projectPath": "E:\\source\\repos\\Patient Registry System\\PatientRegistrySystem.Domain\\PatientRegistrySystem.Domain.csproj"
+            "D:\\Decktop-D\\Project\\project\\pluralsight\\Patient Registry System\\PatientRegistrySystem.Domain\\PatientRegistrySystem.Domain.csproj": {
+              "projectPath": "D:\\Decktop-D\\Project\\project\\pluralsight\\Patient Registry System\\PatientRegistrySystem.Domain\\PatientRegistrySystem.Domain.csproj"
             }
           }
         }

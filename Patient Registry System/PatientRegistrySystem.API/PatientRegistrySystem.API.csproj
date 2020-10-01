@@ -19,7 +19,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PatientRegistrySystem.DB\PatientRegistrySystem.DB.csproj" />
-    <ProjectReference Include="..\PatientRegistrySystem.Domain\PatientRegistrySystem.Domain.csproj" />
     <ProjectReference Include="..\PatientRegistrySystem.Services\PatientRegistrySystem.Services.csproj" />
   </ItemGroup>
 
