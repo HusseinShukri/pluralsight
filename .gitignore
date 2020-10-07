@@ -6,3 +6,14 @@
 *.txt
 *.xml
 *.props
+*.json
+*.pdb
+Patient Registry System/PatientRegistrySystem.Domain/obj/Debug/netstandard2.0/PatientRegistrySystem.Domain.AssemblyInfo.cs
+Patient Registry System/PatientRegistrySystem.Domain/obj/Debug/netstandard2.0/.NETStandard,Version=v2.0.AssemblyAttributes.cs
+Patient Registry System/PatientRegistrySystem.Domain/obj/PatientRegistrySystem.Domain.csproj.nuget.g.targets
+Patient Registry System/PatientRegistrySystem.Domain/Dto/UserRole.cs
+Patient Registry System/PatientRegistrySystem.Domain/PatientRegistrySystem.Domain.csproj
+Patient Registry System/PatientRegistrySystem.Services/bin/Debug/netstandard2.0/PatientRegistrySystem.DB.pdb
+Patient Registry System/PatientRegistrySystem.Services/bin/Debug/netstandard2.0/PatientRegistrySystem.Domain.pdb
+Patient Registry System/PatientRegistrySystem.Services/bin/Debug/netstandard2.0/PatientRegistrySystem.Services.deps.json
+Patient Registry System/PatientRegistrySystem.DB/obj/PatientRegistrySystem.DB.csproj.nuget.dgspec.json

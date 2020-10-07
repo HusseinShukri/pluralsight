@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 
@@ -7,12 +6,13 @@ namespace PatientRegistrySystem.DB.Repos
 {
     public  interface IGenericRepository<T> where T : class
     {
-        ActionResult<T> AddEntity(T entity);
-        ActionResult<T> UpdateEntity(T entity);
-        ActionResult<T> GetId(int id);
-        ActionResult<IEnumerable<T>> GetAll();
-        ActionResult<IEnumerable<T>> FindEntity(Expression<Func<T, bool>> predicate);
-        ActionResult<T> DeleteEntity(int id);
+        T AddEntity(T entity);
+        T UpdateEntity(T entity);
+        T GetId(int id);
+        IEnumerable<T> GetAll();
+        IEnumerable<T> FindEntity(Expression<Func<T, bool>> predicate);
+        void CreateEntity(T entity);
+        void DeleteEntity(T entity);
         void SaveChanges();
     }
 }

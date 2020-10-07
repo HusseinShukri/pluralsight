@@ -5,8 +5,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using System;
 using PatientRegistrySystem.DB.Contexts;
+using PatientRegistrySystem.Services;
+using PatientRegistrySystem.DB.Repos;
+using PatientRegistrySystem.DB.Entities;
 
 namespace PatientRegistrySystem.API
 {
@@ -22,7 +24,15 @@ namespace PatientRegistrySystem.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+            
+            #region GenericServices
+            services.AddScoped<IGenericRepository<User>, UserRepository>();
+            #endregion
+            #region ControllerServices
+            services.AddScoped<IUserService, UserService>();
+            #endregion
+            
+            services.AddAutoMapper(typeof(DB.Profiles.MapperProfile).Assembly);
             services.AddDbContext<PatientContext>(options =>
             {
                 options
